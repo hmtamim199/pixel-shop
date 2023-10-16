@@ -38,7 +38,9 @@
             <span class="absolute bottom-6">
               <div class="badge badge-secondary">+99</div>
             </span>
-            <span><i class="fa-solid fa-cart-shopping text-yellow-500"></i></span>
+            <label for="my-drawer-4" class="drawer-button "><span><i
+                  class="fa-solid fa-cart-shopping text-yellow-500"></i></span></label>
+            <!-- <span><i class="fa-solid fa-cart-shopping text-yellow-500"></i></span> -->
           </li>
         </ul>
       </div>
@@ -60,13 +62,53 @@
               <span>Wishlist</span>
             </a></li>
           <li><a>
-              <span><i class="fa-solid fa-trash"></i></span>
-              <span>Recycle bin</span>
+              <label for="my-drawer-4" class="drawer-button "><span><i
+                    class="fa-solid fa-cart-shopping "></i></span></label>
+              <span>cart</span>
+              <!-- <span><i class="fa-solid fa-trash"></i></span>
+              <span>Recycle bin</span> -->
             </a></li>
         </ul>
       </div>
     </div>
   </div>
+
+  <!-- drawer starts here -->
+  <div class="drawer drawer-end">
+    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content ">
+      <!-- Page content here -->
+      <div class="card w-96 bg-base-100 shadow-2xl min-h-[200px] max-w-[1200px] max-auto">
+        <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+        <div class="card-body">
+          <div class="flex justify-between">
+            <h2 class="card-title">Shoes!</h2>
+            <span><i class="fa-solid fa-heart"></i></span>
+            <span class=""><i class="fa-regular fa-square-minus"></i></span>
+          </div>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div class=" text-white">
+            <button class="btn btn-primary btn-outline w-[45%]"> <i class="fa-solid fa-calendar-week"></i>See
+              details</button>
+            <button class="btn btn-secondary btn-outline w-[45%]"> <i class="fa-solid fa-bag-shopping"></i>Buy
+              Now</button>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="drawer-side">
+      <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+      <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+        <!-- Sidebar content here -->
+        <li><a>Sidebar Item 1</a></li>
+        <li><a>Sidebar Item 2</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- drawer ends here -->
 
 </body>
 
