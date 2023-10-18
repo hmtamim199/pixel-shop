@@ -225,17 +225,24 @@
           </div> -->
         </div>
         <div class="flex justify-center">
-          <button class="bg-red-500 p-2 rounded-lg mt-4 px-4">Clear Cart</button>
+          <button onclick="handleClearCart()" class="bg-red-500 p-2 rounded-lg mt-4 px-4">Clear Cart</button>
         </div>
 
-        <div class="bg-slate-500 rounded-lg p-4 mt-6">
-          <div class="text-white">
-            <h2>product count: 1</h2>
-            <p>total price: 1200$</p>
-            <p>tax: 10$</p>
-            <hr>
-            <p>grand total: 1300$</p>
-          </div>
+        <div class="bg-slate-600 text-white shadow-lg p-4 rounded-md mt-10">
+          <p class="text-yellow-400 font-semibold flex justify-between items-center">
+            <span>PRODUCT COUNT : </span>
+            <span class="text-white" id="product-count">$0</span>
+          </p>
+          <p class="text-yellow-400 font-semibold flex justify-between items-center">
+            <span>PRICE : </span><span class="text-white" id="price">$0</span>
+          </p>
+          <p class="text-yellow-400 font-semibold flex justify-between items-center">
+            <span>TAX : </span><span class="text-white" id="tax-count">$0</span>
+          </p>
+          <hr />
+          <p class="text-yellow-400 font-semibold flex justify-between items-center">
+            <span>TOTAL PRICE : </span><span class="text-white" id="total-price">$0</span>
+          </p>
         </div>
       </ul>
     </div>

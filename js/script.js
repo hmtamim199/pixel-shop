@@ -66,10 +66,16 @@ function handleDetails(id) {
 };
 
 let count = 0;
+let newPrice = 0;
+let tax = 0;
+let grandTotal = 0;
 function handleBuyNowBtn(id) {
   count = count + 1;
   const product = dataSet.find((item) => item.id === id)
   const { name, price, img } = product;
+  newPrice = newPrice + product.price;
+  tax = newPrice * 0.1;
+  grandTotal = newPrice + tax;
   const cartContainer = document.getElementById('card-container');
   const div = document.createElement('div');
   div.classList.add("border-[2px]", "border-red-500", "rounded-lg", "m-2")
@@ -85,5 +91,13 @@ function handleBuyNowBtn(id) {
   
   `;
   cartContainer.appendChild(div);
-  document.getElementById('badge-count').innerText = count
+  document.getElementById('badge-count').innerText = count;
+  document.getElementById('product-count').innerText = count;
+  document.getElementById('price').innerText = newPrice.toFixed(2);
+  document.getElementById('tax-count').innerText = tax.toFixed(2);
+  document.getElementById('total-price').innerText = grandTotal.toFixed(2);
+}
+
+function handleClearCart() {
+  document.getElementById('card-container').innerHTML = "";
 }
