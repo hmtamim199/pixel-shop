@@ -30,9 +30,9 @@ function displayData(data) {
        <label onclick="handleDetails('${id}')" for="my_modal_6" class="btn btn btn-primary btn-outline w-[45%]"><i
            class="fa-solid fa-calendar-week"></i>See
          details</label>
-       <!-- <button class="btn btn-primary btn-outline w-[45%]"> <i class="fa-solid fa-calendar-week"></i>See
-         details</button> -->
-       <button class="btn btn-secondary btn-outline w-[45%]"> <i class="fa-solid fa-bag-shopping"></i>Buy
+       <button 
+       onclick="handleBuyNowBtn('${id}')"
+       class="btn btn-secondary btn-outline w-[45%]"> <i class="fa-solid fa-bag-shopping"></i>Buy
          Now</button>
 
      </div>
@@ -63,4 +63,25 @@ function handleDetails(id) {
 </div>
   
   `
+};
+
+
+function handleBuyNowBtn(id) {
+  const product = dataSet.find((item) => item.id === id)
+  const { name, price, img } = product;
+  const cartContainer = document.getElementById('card-container');
+  const div = document.createElement('div');
+  div.classList.add("border-[2px]", "border-red-500", "rounded-lg")
+  div.innerHTML = `
+  
+  <div class="flex justify-between px-2 bg-gray-300 rounded-lg items-center">
+    <img class="w-[15%] rounded-lg bg-gray-300" src="${img}" alt="">
+    <h1>my product</h1>
+    <p>1</p>
+    <span class="text-2xl text-red-500"><i class="fa-solid fa-trash"></i></span>
+  </div>
+
+  
+  `;
+  cartContainer.appendChild(div);
 }
