@@ -51,7 +51,7 @@ function handleDetails(id) {
   modalContainer.innerHTML = `
   
   <div class="modal-box p-8">
-  <img class="w-full h-[300px]" src="${img}" alt="">
+  <img class="w-full h-[200px]" src="${img}" alt="">
   <h1 class="text-2xl font-bold">product: <span>${name}</span></h1>
   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit maxime eum assumenda harum dolore voluptatum
     asperiores provident, impedit tenetur ipsa aliquid laborum tempora officiis? Atque ea facilis qui soluta
@@ -65,13 +65,14 @@ function handleDetails(id) {
   `
 };
 
-
+let count = 0;
 function handleBuyNowBtn(id) {
+  count = count + 1;
   const product = dataSet.find((item) => item.id === id)
   const { name, price, img } = product;
   const cartContainer = document.getElementById('card-container');
   const div = document.createElement('div');
-  div.classList.add("border-[2px]", "border-red-500", "rounded-lg")
+  div.classList.add("border-[2px]", "border-red-500", "rounded-lg", "m-2")
   div.innerHTML = `
   
   <div class="flex justify-between px-2 bg-gray-300 rounded-lg items-center">
@@ -84,4 +85,5 @@ function handleBuyNowBtn(id) {
   
   `;
   cartContainer.appendChild(div);
+  document.getElementById('badge-count').innerText = count
 }
